@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import javax.swing.ImageIcon;
 
-public class Label
+public class Label extends JLabel
 {
 
 	
@@ -16,7 +16,7 @@ public class Label
 		uneFenetre.setSize(100, 100);
 		
 		JLabel unlabel = new JLabel();
-		ImageIcon icon = new ImageIcon( "Focking case.png");
-		
+		this.setIcon(new ImageIcon( "FockingCase.png"));
+		uneFenetre.setVisible(true);
 	}
 }
