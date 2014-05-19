@@ -1,4 +1,4 @@
-package fr.iutvalence.java.tp.puissance4.labels;
+package fr.iutvalence.java.tp.puissance4.interfaces;
 
 import javax.swing.SwingUtilities;
 import javax.swing.JLabel;
