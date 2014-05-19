@@ -28,6 +28,8 @@ public class TacheDAffichageDuPuissance4 implements Runnable, ActionListener
 	
 	private JSplitPane PremierPane;
 	
+	private JSplitPane DeuxiemePane;
+	
 	private PanneauDeBoutonsDeJeu UnPanneauDeJeu;
 	
 	@Override
@@ -36,43 +38,24 @@ public class TacheDAffichageDuPuissance4 implements Runnable, ActionListener
 		this.unefenetre = new JFrame();
 		this.unefenetre.setTitle("PUISSANCE 4");
 		this.unefenetre.setSize(900, 800);
-		this.unefenetre.setVisible(true);
-		
-		JMenuBar BarreDeMenu = new JMenuBar();
-
-		JMenu unMenu = new JMenu("Menu");
-
-		this.Information = new JMenuItem("Information");
-
-		this.Information.addActionListener(this);
-
-		unMenu.add(this.Information);
-
-		this.Fermer = new JMenuItem("Fermer");
-		this.Fermer.addActionListener(this);
-		unMenu.add(this.Fermer);
-		BarreDeMenu.add(unMenu);
-		
+		this.unefenetre.setJMenuBar(new BarreDeMenuPuissance4(this.unefenetre));
 		
 		this.PremierPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		this.PremierPane.add(UnPanneauDeJeu);
 		this.PremierPane.add(DeuxiemePane);
-		this.unefenetre.setJMenuBar(BarreDeMenu);
+		this.PremierPane.setEnabled(false);
+		this.PremierPane.setBorder(null);
+		this.PremierPane.setDividerSize(0);
+		
 		this.unefenetre.setVisible(true);
 	}
-	
-	
-	public void actionPerformed(ActionEvent event){
-		JMenuItem UnItem = (JMenuItem) event.getSource();
-		if (UnItem == this.Information)
-		{
-			JOptionPane.showMessageDialog(this.unefenetre, "Une application qui joue une partie de puissance 4", "Information", JOptionPane.INFORMATION_MESSAGE);
-			return;
-		}
-		if (UnItem == this.Fermer)
-		{
-			if (JOptionPane.showConfirmDialog(this.unefenetre, "Voulez vous vraiment fermer ?", "Confirmez votre choix", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.OK_OPTION)
-				this.unefenetre.dispose();
-		}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
 	}
+	
+	
+
 }
