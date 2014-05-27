@@ -13,6 +13,8 @@ public class ApplicationDaffichageDeLabel
 		ImageIcon uneimage = new ImageIcon("FockingCase.png");
 		unlabel.setIcon(uneimage);
 		unlabel.setVisible(true);
+		
+		
 
 	}
 
